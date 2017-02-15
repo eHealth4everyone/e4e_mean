@@ -1,0 +1,166 @@
+animations: [
+  trigger('flyInOut', [
+    state('in', style({opacity: 1, transform: 'translateX(0)'})),
+    transition('void => *', [
+      style({
+        opacity: 0,
+        transform: 'translateX(-100%)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition('* => void', [
+      animate('0.2s 10 ease-out', style({
+        opacity: 0,
+        transform: 'translateX(100%)'
+      }))
+    ])
+  ])
+]
+
+
+ animations: [
+        trigger('viewcontacts',[
+                state('in', style({
+                    opacity: 1,
+                    backgroundColor: 'red',
+                    transform: 'translateX(0)'
+                })),
+                state('out', style({
+                    opacity: 0,
+                  transform: 'translateX(-100%)'
+                })),
+                transition('in <=> out', animate('300ms ease-in'))
+            
+            ])
+    ]
+
+
+
+animations: [
+    trigger('heroState', [
+      state('inactive', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active',   style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-out'))
+    ])
+  ]
+
+
+transition('inactive => active', [
+  style({
+    backgroundColor: '#cfd8dc',
+    transform: 'scale(1.3)'
+  }),
+  animate('800ms ease-in', style({
+    backgroundColor: '#eee',
+    transform: 'scale(1)'
+  }))
+])
+
+
+
+animations: [
+    trigger('clickstate', [
+        state('inactive', style({transform: 'translateX(0)'})),
+        transition('void => *', [
+            style({transform: 'translateX(-100%)'}),
+            animate(800)
+        ]),
+        transition('* => void', [
+            animate(800, style({transform: 'translateX(100%)'}))
+        ])
+    ])
+  ]
+
+
+  animations: [
+        trigger('clickstate', [
+            state('inactive', style({transform: 'translateX(0) scale(1)'})),
+            state('active',   style({transform: 'translateX(0) scale(1.1)'})),
+            transition('inactive => active', animate('800ms ease-in')),
+            transition('active => inactive', animate('800ms ease-out')),
+            transition('void => inactive', [
+                style({transform: 'translateX(-100%) scale(1)'}),
+                animate(800)
+            ]),
+            transition('inactive => void', [
+                animate(800, style({transform: 'translateX(100%) scale(1)'}))
+            ]),
+            transition('void => active', [
+                style({transform: 'translateX(0) scale(0)'}),
+                animate(800)
+            ]),
+            transition('active => void', [
+            animate(800, style({transform: 'translateX(0) scale(0)'}))
+            ])
+        ])
+    ]
+
+
+    animations: [
+  trigger('shrinkOut', [
+    state('in', style({height: '*'})),
+    transition('* => void', [
+      style({height: '*'}),
+      animate(250, style({height: 0}))
+    ])
+  ])
+]
+
+
+animations: [
+  trigger('flyInOut', [
+    state('in', style({opacity: 1, transform: 'translateX(0)'})),
+    transition('void => *', [
+      style({
+        opacity: 0,
+        transform: 'translateX(-100%)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition('* => void', [
+      animate('0.2s 10 ease-out', style({
+        opacity: 0,
+        transform: 'translateX(100%)'
+      }))
+    ])
+  ])
+]
+
+
+
+animations: [
+  trigger('flyInOut', [
+    state('in', style({width: 120, transform: 'translateX(0)', opacity: 1})),
+    transition('void => *', [
+      style({width: 10, transform: 'translateX(50px)', opacity: 0}),
+      group([
+        animate('0.3s 0.1s ease', style({
+          transform: 'translateX(0)',
+          width: 120
+        })),
+        animate('0.3s ease', style({
+          opacity: 1
+        }))
+      ])
+    ]),
+    transition('* => void', [
+      group([
+        animate('0.3s ease', style({
+          transform: 'translateX(50px)',
+          width: 10
+        })),
+        animate('0.3s 0.2s ease', style({
+          opacity: 0
+        }))
+      ])
+    ])
+  ])
+]
+

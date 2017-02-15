@@ -1,0 +1,56 @@
+<div class="container">
+    <!--<button class="btn btn-primary" id="naviconbtn"><i class="fa fa-navicon fa-fw" id="navicon" aria-hidden="true"></i></button>
+    <div class="list-group" id="listgroupdiv">
+        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+        <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+    </div>-->
+
+
+    <!-- addCourse(courseName.value); courseName.value=''; -->
+    <h2>Contact App with Angular2</h2>
+    <br/>{{clickstate}}
+    <div>
+        <label>Search <span *ngIf="contactname">for {{contactname}}</span></label><br/>
+        <!--<input id="searchinput" #searchContactInput type="text" autoGrow [(ngModel)]="searchname" />-->
+        <div>
+            <div class="search">
+                <span class="fa fa-search"></span>
+                <!--<input placeholder="Search term">-->
+                <input id="searchinput" #searchContactInput type="text" autoGrow [(ngModel)]="searchname" />
+            </div>
+            <div class="pull-right">
+                <label id="addcontactlabel">Add contact:</label>
+                <button class='btn btn-primary btn-md' (click)="searchname='';viewdetails='';viewcontacts='otherview';"><i class="fa fa-user-plus"></i></button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="displaycontactdiv" *ngIf="searchname">
+        <h1><label id="titlelabel">{{ title }}</label></h1><br/>
+        <ul #unList class="contactlist row">
+            <li [@viewcontacts]="viewcontacts" class="clearfix col-xs-12 col-sm-6 col-md-4 col-lg-3" #courseContainer (click)="showContactDetail(contact, courseContainer); searchname='';" *ngFor="let contact of contacts; let i = index;">
+                <img class="img-circle" id="course_{{i}}" class="customimages" src="/customdir/lib/img/tphen.jpg" />
+                <div style="margin-right: -5px;">
+                    <h4><label class="contactnamelabel" #contactNameLabel>{{ contact.nickname }}</label></h4>
+                    <h6><label class="contactphonelabel" #contactPhoneLabel>{{ contact.phone }}</label></h6>
+                </div>
+                <button class="btn btn-sm close deletecontact" title="double click to delete" (dblclick)="deleteContact(courseContainer, contact)" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--  (keyup.enter)="addContact(courseName.value); courseName.value='';" (blur)="addCourse(courseName.value); courseName.value='';" -->
+<authors *ngIf="contactdetails && !searchname && viewdetails" [contact]="contactdetails">Loading...</authors>
+
+<addcontact *ngIf="!searchname && !viewdetails">Loading...</addcontact>
+
+<div class="container" *ngIf="!searchname">
+    <button type="button" class="btn btn-primary" (click)="searchname='search term'; viewcontacts='otherview';">
+        <i class="fa fa-arrow-right"></i>
+    </button>
+</div>

@@ -1,0 +1,28 @@
+<!--<div class="container-fluid">
+    <h2>Authors</h2> <label *ngIf="authorName">Author name: {{authorName}}</label><br>{{ title }}
+    <ul>
+        <li *ngFor="let author of authors">
+            {{ author }}
+        </li>
+    </ul>
+</div>-->
+
+<div class="container">
+    <form name="addcontact" #addContact="ngForm">
+        <div class="form-group">
+            <input type="text" placeholder="firstname" required [(ngModel)]="firstname" name="firstname" #name="ngModel" />
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="surname" required [(ngModel)]="surname" name="surname" #name="ngModel" />
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="phone" required [(ngModel)]="phone" name="phone" #name="ngModel" />
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="email" required [(ngModel)]="email" name="email" #name="ngModel" />
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!addContact.form.valid"><i class="fa fa-check"></i></button>
+    </form>
+
+</div>

@@ -1,0 +1,161 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.list-group-item:hover {
+    list-style: none;
+    text-decoration: none;
+    color: maroon;
+}
+
+#naviconbtn {
+    background: green;
+}
+
+.customstyle {
+    background: #BDB76B;
+}
+
+.contactlist {
+    list-style: none;
+    background: #f2f2f2;
+    padding: 3px;
+    /* height: auto;
+    width: auto;*/
+    /*transition: ease-in-out;*/
+}
+
+.contactlist li {
+    /* width: 100%;*/
+    margin: 5px;
+    /*margin-right: 40px;
+    margin-left: -37px;*/
+    float: left;
+    background-image: linear-gradient(#f2f2f2, #f6f6f6);
+    border-bottom-style: groove;
+    border-bottom-color: #f8f8f8;
+    border-radius: 7px;
+    box-shadow: inset 0 0 1px;
+    display: flex;
+    transition: margin-left 0.3s linear 0.05s;
+}
+
+.contactlist li:hover {
+    cursor: pointer;
+    margin-left: -5px;
+    background: #FECE4E;
+    color: sienna;
+    box-shadow: 0 0 3px;
+    transform: scale(1.01);
+}
+
+.contactlist.ng-enter {
+    transition: all 1s ease 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.contactlist.ng-enter-stagger {
+    transition-delay: 1s;
+}
+
+.contactlist.ng-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.deletecontact {
+    margin-left: auto;
+    margin-right: 0;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 20px;
+    width: 47px;
+}
+
+.deletecontact:hover {
+    background: tomato;
+    /*text-rendering:  ;*/
+}
+
+.customimages {
+    width: 19%;
+    max-width: 25%;
+    height: 12%;
+    float: left;
+    /*margin-right: 10px;
+    border-radius: 7px;*/
+}
+
+.contactnamelabel {
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#titlelabel {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.imgreplace {
+    width: 19%;
+    max-width: 25%;
+    height: 12%;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    clear: left;
+}
+
+.imgreplace:hover {
+    background: #8FBC8F;
+    border-radius: 7px;
+}
+
+#addcontactlabel {
+    color: indianred;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    border-radius: 5px;
+}
+
+#searchinput {
+    max-width: 350px;
+    width: auto;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    text-indent: 30px;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    font-size: 15px;
+}
+
+input {
+    width: 350px;
+    padding: auto;
+    margin: auto;
+    height: auto;
+    background-image: url('/customdir/lib/img/tphena.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+
+/* class="ui-button ui-widget ui-corner-all" */

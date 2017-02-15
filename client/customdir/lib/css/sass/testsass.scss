@@ -1,0 +1,56 @@
+header[role="banner"] {
+    margin: 20px 0 30px 0;
+    border-bottom: 4px solid #333;
+    #logo {
+        float: left;
+        margin: 0 20px 0 0;
+        img {
+            display: block;
+            opacity: .95;
+        }
+    }
+    h1 {
+        padding: 15px 0;
+        font-size: 54px;
+        line-height: 1;
+        font-family: Jubilat, Georgia, serif;
+        font-weight: bold;
+    }
+}
+
+header[role="banner"] h1 {
+    padding: 15px 0;
+    font: {
+        size: 54px;
+        family: Jubilat, Georgia, serif;
+        weight: bold;
+    }
+    line-height: 1;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: red;
+    border-bottom: 2px solid red;
+    &:hover {
+        color: maroon;
+        border-color: maroon;
+    }
+}
+
+$font-serif: Jubilat,
+Georgia,
+serif;
+@mixin title-style($color: #c63, $font-family: Garamond) {
+    margin: 0 0 20px 0;
+    font-family: $font-family;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color;
+}
+
+section.main h2 {
+    @include title-style(coral, $font-serif);
+}

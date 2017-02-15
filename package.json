@@ -1,0 +1,18 @@
+{
+  "name": "e4e_mean",
+  "version": "1.0.0",
+  "description": "e4e Mean (M=mysql) starter kit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cpnwaugha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "mongojs": "^2.4.0",
+    "mysql": "^2.13.0"
+  }
+}
