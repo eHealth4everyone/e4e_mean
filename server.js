@@ -44,8 +44,6 @@ var mysql_conn = mysql.createConnection({
 // I assume that you have a test database with a table student
 // If you dont you should use whatever database you have
 app.get('/showdb', function(req, res) {
-
-    var gVar = [];
     mysql_conn.connect(function(error) {
         if (!!error) {
             console.log('Error');
@@ -57,12 +55,10 @@ app.get('/showdb', function(req, res) {
                 console.log('error connecing to db table');
             else {
                 console.log(row);
-                gVar = row;
-                res.send(row.toString());
             }
         })
     })
-    res.send('gVar' + 'Done...');
+    res.send('Database connection Successful...');
 
 })
 
